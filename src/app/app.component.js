@@ -12,20 +12,30 @@ var Hero = (function () {
     return Hero;
 }());
 exports.Hero = Hero;
+var HEROES = [
+    { id: 10, name: 'Raven' },
+    { id: 11, name: 'Mr. Nice' },
+    { id: 12, name: 'Narco' },
+    { id: 13, name: 'Bombasto' },
+    { id: 14, name: 'Celeritas' },
+    { id: 15, name: 'Magneta' },
+    { id: 16, name: 'RubberMan' },
+    { id: 17, name: 'Dynama' },
+    { id: 18, name: 'Dr IQ' },
+    { id: 19, name: 'Magma' },
+    { id: 20, name: 'Tornado' }
+];
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Tour of Heroes';
-        this.hero = {
-            id: 1,
-            name: 'Raven'
-        };
+        this.heroes = HEROES;
     }
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n\t<h1>{{title}}</h1>\n\t<h2>{{hero.name}} details!</h2>\n\t<div>\n\t<label>id: </label>\n\t{{hero.id}}\n\t</div>\n\t<div>\n\t<label>name: </label>\n\t<input [(ngModel)]=\"hero.name\" placeholder=\"name\">\n\t</div>\n\t",
+        template: "\n\t<h1>{{title}}</h1>\n\t<h2>My Heroes</h2>\n\t<ul class=\"heroes\">\n\t<li *ngFor=\"let hero of heroes\">\n\t<!-- each hero goes here -->\n\t<span class=\"badge\">{{hero.id}}</span> {{hero.name}}\n\t</li>\n\t</ul>\n\t",
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
