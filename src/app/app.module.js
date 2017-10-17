@@ -24,6 +24,11 @@ AppModule = __decorate([
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule,
             router_1.RouterModule.forRoot([
                 {
+                    path: '',
+                    redirectTo: 'dashboard',
+                    pathMatch: 'full'
+                },
+                {
                     path: 'heroes',
                     component: heroes_component_1.HeroesComponent
                 },

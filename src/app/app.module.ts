@@ -13,6 +13,11 @@ import { DashboardComponent } from './dashboard.component';
 	imports:      [ BrowserModule, FormsModule, 
 	RouterModule.forRoot([
 	{
+		path: '',
+		redirectTo: 'dashboard',
+		pathMatch: 'full'
+	},
+	{
 		path: 'heroes',
 		component: HeroesComponent
 	},
